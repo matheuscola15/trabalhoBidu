@@ -1,6 +1,7 @@
 package br.com.matheus.trabalhoBidu.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
@@ -14,6 +15,7 @@ public class Contas {
 
     private Integer id;
     private Date dataconta;
+    private BigDecimal valorConta;
 
     @ManyToOne
     @JoinColumn(name = "idCliente")
@@ -33,6 +35,14 @@ public class Contas {
 
     public void setDataconta(Date dataconta) {
         this.dataconta = dataconta;
+    }
+
+    public BigDecimal getValorConta() {
+        return valorConta;
+    }
+
+    public void setValorConta(BigDecimal valorConta) {
+        this.valorConta = valorConta;
     }
 
     @Override

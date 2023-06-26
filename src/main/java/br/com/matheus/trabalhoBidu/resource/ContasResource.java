@@ -1,6 +1,7 @@
 package br.com.matheus.trabalhoBidu.resource;
 
 
+import br.com.matheus.trabalhoBidu.dto.ContasDTO;
 import br.com.matheus.trabalhoBidu.model.Contas;
 import br.com.matheus.trabalhoBidu.repository.ContasRepository;
 import br.com.matheus.trabalhoBidu.repository.filter.ContasFilter;
@@ -22,7 +23,7 @@ public class ContasResource {
     private ContasRepository contasRepository;
 
     @GetMapping
-    public Page<Contas> pesquisar(ContasFilter contasFilter, Pageable pageable){
+    public Page<ContasDTO> pesquisar(ContasFilter contasFilter, Pageable pageable){
         return contasRepository.Filtrar(contasFilter, pageable);
     }
 

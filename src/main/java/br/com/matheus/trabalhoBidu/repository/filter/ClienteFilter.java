@@ -2,13 +2,13 @@ package br.com.matheus.trabalhoBidu.repository.filter;
 
 public class ClienteFilter {
 
-    private String nomeCliente;
+    private String nomecliente;
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getNomecliente() {
+        return nomecliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNomecliente(String nomecliente) {
+        this.nomecliente = nomecliente;
     }
 }

@@ -14,8 +14,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "nomecliente")
-    private String nomeCliente;
+    private String nomecliente;
 
     @OneToMany(mappedBy = "cliente")
     private List<Contas> contas = new ArrayList<>();
@@ -28,12 +27,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getNomecliente() {
+        return nomecliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNomecliente(String nomecliente) {
+        this.nomecliente = nomecliente;
     }
 
     @Override

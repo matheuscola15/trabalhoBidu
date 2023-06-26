@@ -1,17 +1,31 @@
-package br.com.matheus.trabalhoBidu.repository.filter;
+package br.com.matheus.trabalhoBidu.dto;
 
 import javax.persistence.Column;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class ContasFilter {
+public class ContasDTO {
 
+    private Integer id;
     private Date dataconta;
-
     @Column(name = "valorconta")
     private BigDecimal valorConta;
-
     private String nomecliente;
+
+    public ContasDTO(Integer id, Date dataconta, BigDecimal valorConta, String nomecliente) {
+        this.id = id;
+        this.dataconta = dataconta;
+        this.valorConta = valorConta;
+        this.nomecliente = nomecliente;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Date getDataconta() {
         return dataconta;

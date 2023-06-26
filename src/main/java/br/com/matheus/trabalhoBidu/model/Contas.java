@@ -15,10 +15,11 @@ public class Contas {
 
     private Integer id;
     private Date dataconta;
+    @Column(name = "valorconta")
     private BigDecimal valorConta;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     public Integer getId() {

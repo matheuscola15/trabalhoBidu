@@ -2,22 +2,23 @@ package br.com.matheus.trabalhoBidu.repository.filter;
 
 import javax.persistence.Column;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ContasFilter {
 
-    private Date dataconta;
+    private LocalDate dataconta;
 
     @Column(name = "valorconta")
     private BigDecimal valorConta;
 
     private String nomecliente;
 
-    public Date getDataconta() {
+    public LocalDate getDataconta() {
         return dataconta;
     }
 
-    public void setDataconta(Date dataconta) {
+    public void setDataconta(LocalDate dataconta) {
         this.dataconta = dataconta;
     }
 

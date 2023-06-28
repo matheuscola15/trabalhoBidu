@@ -15,6 +15,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class ContasRepositoryImpl implements ContasRepositoryQuery{
 
         Predicate[] predicates = criarRestricoes(contasFilter, builder, root);
         criteria.where(predicates);
-        criteria.orderBy(builder.asc(root.get("dataconta")));
+        criteria.orderBy(builder.asc(root.get("valorConta")));
 
         TypedQuery<ContasDTO> query = manager.createQuery(criteria);
         adicionarRestricoesDePaginacao(query, pageable);
@@ -46,7 +47,7 @@ public class ContasRepositoryImpl implements ContasRepositoryQuery{
         List<Predicate> predicates = new ArrayList<>();
 
         if (!StringUtils.isEmpty(contasFilter.getNomecliente())){
-            predicates.add(builder.like(builder.lower(root.get("nomecliente")),
+            predicates.add(builder.like(builder.lower(root.get("cliente").get("nomecliente")),
                     "%" + contasFilter.getNomecliente().toLowerCase() + "%"
             ));
         }
@@ -80,7 +81,7 @@ public class ContasRepositoryImpl implements ContasRepositoryQuery{
 
         Predicate[] predicates = criarRestricoes(contasFilter, builder, root);
         criteria.where(predicates);
-        criteria.orderBy(builder.asc(root.get("dataconta")));
+        criteria.orderBy(builder.asc(root.get("valorConta")));
 
         criteria.select(builder.count(root));
 

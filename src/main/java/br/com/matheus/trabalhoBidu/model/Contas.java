@@ -2,7 +2,7 @@ package br.com.matheus.trabalhoBidu.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -14,7 +14,7 @@ public class Contas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
-    private Date dataconta;
+    private LocalDate dataconta;
     @Column(name = "valorconta")
     private BigDecimal valorConta;
 
@@ -30,11 +30,11 @@ public class Contas {
         this.id = id;
     }
 
-    public Date getDataconta() {
+    public LocalDate getDataconta() {
         return dataconta;
     }
 
-    public void setDataconta(Date dataconta) {
+    public void setDataconta(LocalDate dataconta) {
         this.dataconta = dataconta;
     }
 
